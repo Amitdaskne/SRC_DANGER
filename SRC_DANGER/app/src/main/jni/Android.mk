@@ -3,7 +3,7 @@ MAIN_LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libdobby
-LOCAL_SRC_FILES := Main/dobby/libraries/$(TARGET_ARCH_ABI)/libdobby.a
+LOCAL_SRC_FILES := Main/Dobby/libraries/$(TARGET_ARCH_ABI)/libdobby.a
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/dobby/
 include $(PREBUILT_STATIC_LIBRARY)
 
