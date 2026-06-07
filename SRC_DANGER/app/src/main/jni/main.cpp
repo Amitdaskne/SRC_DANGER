@@ -5,7 +5,7 @@ using namespace std;
 #include <android/native_window_jni.h>
 #include <android/log.h>
 #include "Main/Tools.h"
-#include "Main/Dobby/Dobby.h"
+#include "Main/Dobby/dobby.h"
 #include "Main/Includes.h"
 #include "Main/StrEnc.h"
 #include "Main/Vector3.hpp"
