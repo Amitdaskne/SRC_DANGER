@@ -16,21 +16,16 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Extract ZIP
-        run: unzip SRC_DANGER.zip
+      - name: Grant Permission
+        run: chmod +x SRC_DANGER/gradlew
 
-      - name: Find gradlew
-        run: find . -name gradlew
-
-      - name: Build
+      - name: Build APK
         run: |
-          chmod +x $(find . -name gradlew | head -1)
-          DIR=$(dirname $(find . -name gradlew | head -1))
-          cd "$DIR"
+          cd SRC_DANGER
           ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: APK
-          path: '**/*.apk'
+          name: app-debug
+          path: SRC_DANGER/app/build/outputs/apk/debug/*.apk
