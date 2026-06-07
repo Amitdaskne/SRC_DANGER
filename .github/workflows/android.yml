@@ -17,15 +17,13 @@ jobs:
           java-version: 17
 
       - name: Grant Permission
-        run: chmod +x SRC_DANGER/gradlew
+        run: chmod +x gradlew
 
       - name: Build APK
-        run: |
-          cd SRC_DANGER
-          ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: SRC_DANGER/app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/debug/*.apk
